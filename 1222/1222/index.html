@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>手勢網站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <!-- 第一屏 -->
+            <div class="screen active" id="screen1">
+                <div class="logo-container">
+                    <img src="./img/img1.jpg" alt="logo" class="logo">
+                </div>
+            </div>
+
+            <!-- 第二屏 -->
+            <div class="screen" id="screen2">
+                <h3>找尋裝置</h3>
+                <div class="loading"></div>
+            </div>
+
+            <!-- 第三屏 -->
+            <div class="screen" id="screen3">
+                <div class="complete">完成！</div>
+            </div>
+
+            <!-- 第四屏 -->
+             <div class="screen" id="screen4">
+                <div class="header">
+                   <h1 class="title">掌控者</h1>
+                   <div class="records-button">
+                        <a href="services.html"><img src="./img/img3.jpg" alt="log"></a>
+                   </div>
+                </div>
+                <div class="content">
+                     <div class="connection-status">
+                        <span class="status-connected">連接中</span>
+                    </div>
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="switchTab('left')">左手</button>
+                        <button class="tab-button" onclick="switchTab('right')">右手</button>
+                    </div>
+                    <div class="gesture">
+                        <img src="./img/img4.jpg" alt="手勢圖" class="gesture-image">
+                    </div>
+                    <div class="buttons">
+                        <button class="action-button active" onclick="selectGesture(this)">握拳</button>
+                        <button class="action-button" onclick="selectGesture(this)">伸展</button>
+                        <button class="action-button" onclick="selectGesture(this)">抓取</button>
+                        <button class="action-button" onclick="selectGesture(this)">
+                            <a href="about.html">自定</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

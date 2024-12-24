@@ -1,0 +1,189 @@
+/* 基本樣式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 70mm;
+    height: 150mm;
+    position: relative;
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* 頂部標題欄 */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15px;
+    width: 100%;
+    background-color: #398FCB;
+    color: #FFF;
+    padding: 8px 15px;
+    box-shadow: none;
+}
+
+.back-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.placeholder {
+    width: 24px;
+}
+
+/* 記錄內容區域 */
+.content {
+    padding: 15px;
+    padding-right: 19px;
+}
+
+.record-box {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #E8E8E8;
+}
+
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.record-header h2 {
+    font-size: 0.8rem;
+    color: #333;
+    margin: 0;
+}
+
+/* 下拉選單樣式 */
+#monthSelect {
+    padding: 3px 8px;
+    border: 1px solid #E8E8E8;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* 表格樣式 */
+.record-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.record-table th,
+.record-table td {
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 0.75rem;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.record-table th {
+    color: #666;
+    font-weight: normal;
+}
+
+.record-table td {
+    color: #333;
+}
+
+/* 修改滾動條樣式 */
+.container::-webkit-scrollbar {
+    width: 4px;
+    position: absolute;
+    right: 0;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 20px 20px 0;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 統計區域樣式 */
+.stats-box {
+    background-color: #FFF;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #E8E8E8;
+    margin-top: 15px;
+}
+
+.stats-header h2 {
+    font-size: 0.8rem;
+    color: #333;
+    margin: 0 0 15px 0;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stats-label {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.stats-value {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 進度條樣式 */
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #27ae60;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}

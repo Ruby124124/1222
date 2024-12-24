@@ -1,0 +1,303 @@
+/* 基本樣式 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F2;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 70mm;
+    height: 150mm;
+    position: relative;
+    background-color: #F2F2F2;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15px;
+    width: 100%;
+    background-color: #398FCB;
+    color: #FFF;
+    padding: 8px 15px;
+    box-shadow: none;
+}
+
+.back-button img,
+.records-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.records-button { 
+    margin-right: 15px; 
+    /* 將右邊圖標移動靠左 */
+}
+
+.back-button:hover,
+.records-button:hover {
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    margin: 8px;
+}
+
+.instructions p {
+    position: relative;
+    padding-left: 25px;
+    font-size: 1.0rem;
+    color: #555;
+    margin: 8px 0;
+}
+
+.instructions p::before {
+    content: counter(instruction);
+    counter-increment: instruction;
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    background-color: #398FCB;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.instructions {
+    counter-reset: instruction;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.hand {
+    position: relative;
+}
+
+.hand-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+.fingers {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: nowrap;
+}
+
+.finger-button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    flex: 1;
+    max-width: 60px;
+    white-space: nowrap;
+    background-color: #3498db;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.finger-button:hover {
+    background-color: #2980b9;
+}
+
+.controls {
+    padding: 10px 15px;
+}
+
+.control {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #E8E8E8;
+}
+
+.control label {
+    font-size: 0.85rem;
+    color: #333;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background: #E8E8E8;
+    border-radius: 1px;
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #DD7B25;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+hr {
+    margin: 0;
+    border: none;
+    border-top: 1px solid #E8E8E8;
+}
+
+#fingerName {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.save-button {
+    width: 90%;
+    padding: 8px;
+    font-size: 0.9rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    display: block;
+}
+
+.save-button:hover {
+    background-color: #27ae60;
+}
+
+.hand-control {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.hand-control .hand-image {
+    width: 35%;
+}
+
+/* 添加滑块标签样式 */
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 3px;
+}
+
+/* 添加已保存手指的样式 */
+.finger-button.saved {
+    background-color: #27ae60;
+    position: relative;
+}
+
+.finger-button.saved::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #27ae60;
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joint-control {
+    background-color: #fff;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.joint-item {
+    padding: 10px;
+}
+
+.slider-container {
+    margin-top: 5px;
+}
+
+/* 確保內容不會被遮擋 */
+#controlScreen {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 0;
+}
+
+/* 調整滑塊容器間距 */
+.slider-container + .slider-container {
+    margin-top: 8px;
+}
+
+/* 確保滾動條樣式美觀 */
+.container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* 重置按鈕樣式 */
+.reset-button {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 15px;
+    font-size: 0.9rem;
+    background-color: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: #7f8c8d;
+}

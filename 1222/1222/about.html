@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>自定義手勢</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 頂部標題與按鈕 -->
+        <div class="header">
+            <div class="back-button">
+                <a href="index.html"><img src="./img/img2.jpg" alt="back"></a>
+            </div>
+            <h1 class="title">自定義手勢</h1>
+            <div class="records-button">
+                <a href="services.html"><img src="./img/img3.jpg" alt="log"></a>
+            </div>
+        </div>
+
+        <!-- 自定義頁面 -->
+        <div class="screen active" id="customizeScreen">
+            <div class="hand">
+                <img src="./img/img12.jpg" alt="手手" class="hand-image">
+            </div>
+            <div class="fingers">
+                <button class="finger-button" id="thumb" onclick="selectFinger('thumb')">大拇指</button>
+                <button class="finger-button" id="index" onclick="selectFinger('index')">食指</button>
+                <button class="finger-button" id="middle" onclick="selectFinger('middle')">中指</button>
+                <button class="finger-button" id="ring" onclick="selectFinger('ring')">無名指</button>
+                <button class="finger-button" id="pinky" onclick="selectFinger('pinky')">小指</button>
+            </div>
+            <div class="instructions">
+                <p> 輕觸空白處即可將手指抬平</p>
+                <p>選擇要操控的手指</p>
+            </div>
+            <button class="reset-button" onclick="resetAll()">重置</button>
+        </div>
+
+        <!-- 操控頁面 -->
+        <div class="screen" id="controlScreen" style="display: none;"> 
+            <h2 id="fingerName">操控大拇指</h2> 
+            <div class="hand-control"> 
+                <img src="./img/img10.jpg" alt="手手正面" class="hand-image"> 
+                <img src="./img/img11.jpg" alt="手手側面" class="hand-image"> 
+            </div> 
+            <div class="controls"> 
+                <div class="control">
+                    <label>全選</label>
+                    <div class="slider-container">
+                        <input type="range" id="fullSelect" min="0" max="180">
+                        <div class="range-labels">
+                            <span>彎曲</span>
+                            <span>伸展</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="control joint-control">
+                    <div class="joint-item">
+                        <label>第一指節：</label>
+                        <div class="slider-container">
+                            <input type="range" id="firstJoint" min="0" max="80">
+                            <div class="range-labels">
+                                <span>彎曲</span>
+                                <span>伸展</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="joint-item">
+                        <label>第二指節：</label>
+                        <div class="slider-container">
+                            <input type="range" id="secondJoint" min="0" max="110">
+                            <div class="range-labels">
+                                <span>彎曲</span>
+                                <span>伸展</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="joint-item">
+                        <label>第三指節：</label>
+                        <div class="slider-container">
+                            <input type="range" id="thirdJoint" min="0" max="60">
+                            <div class="range-labels">
+                                <span>彎曲</span>
+                                <span>伸展</span>
+                            </div>
+                        </div>
+                        <div class="slider-container">
+                            <input type="range" id="thirdJointLR" min="0" max="90">
+                            <div class="range-labels">
+                                <span>左</span>
+                                <span>右</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <button class="save-button" onclick="saveSettings()">保存</button> 
+        </div> 
+    </div>
+    <script src="about.js"></script>
+</body>
+</html>
